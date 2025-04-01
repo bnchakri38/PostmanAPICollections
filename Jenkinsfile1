@@ -43,12 +43,12 @@ pipeline {
 
         stage('Run API Test-Cases in Parallel') {
 			parallel {
-				stage('Run GoRest API Test') {
+				stage('Run GoRest Workflow API Test') {
 					steps {
 						bat 'docker run --rm  -v %cd%/newman:/app/results chakri38/gorestapiworkflow:1.0'
 					}
 				}
-				stage('Run Booking API Test'){
+				stage('Run GoRest DataDriven API Test'){
 					steps {
 						bat 'docker run --rm  -v %cd%/newman:/app/results chakri/gorestapidd:1.0'
 					}
@@ -58,7 +58,7 @@ pipeline {
 		
 		stage('Publish HTML Extra Reports') {
 			parallel {
-				stage('Publish GoRest Report') {
+				stage('Publish GoRest Workflow Report') {
 					steps {
 						publishHTML([
 							allowMissing: false,
@@ -71,7 +71,7 @@ pipeline {
 						])
 					}
 				}
-				stage('Publish GoRest Report') {
+				stage('Publish GoRest DataDrivern Report') {
 					steps {
 						publishHTML([
 							allowMissing: false,
