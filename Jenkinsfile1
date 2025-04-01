@@ -67,7 +67,7 @@ pipeline {
                             keepAll: true,
                             reportDir: 'newman',
                             reportFiles: 'gorestapiworkflow.html',
-                            reportName: 'GoRest API Workflow Report'
+                            reportName: 'GoRestAPIWorkflowReport'
                         ])
                     }
                 }
@@ -79,7 +79,7 @@ pipeline {
                             keepAll: true,
                             reportDir: 'newman',
                             reportFiles: 'gorestapidd.html',
-                            reportName: 'GoRest API DataDriven Report'
+                            reportName: 'GoRestAPIDataDrivenReport'
                         ])
                     }
                 }
