@@ -25,14 +25,14 @@ pipeline{
         stage('Pull Docker Image'){
             steps{
                 echo "Pulling GoRest DataDriven Docker Image"
-                bat 'docker pull chakri38/gorestapiddtest:1.0'
+                bat 'docker pull chakri38/gorestapidd:1.0'
             }
         }
         
         stage("Run API Test Cases"){
             steps{
                 echo "Running GoRestAPIDataDriven TestCases"
-                bat "docker run -v %CD%/newman:/app/results chakri38/gorestapiddtest:1.0"
+                bat "docker run -v %CD%/newman:/app/results chakri38/gorestapidd:1.0"
             }
         }
 
