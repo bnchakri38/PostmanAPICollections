@@ -29,7 +29,7 @@ pipeline {
 				}
 				stage('Pull GoRest DataDriven Image') {
 					steps {
-						bat 'docker pull naveenkhunteta/gorestapidd:1.0'
+						bat 'docker pull chakri38/gorestapidd:1.0'
 					}
 				}
             }
