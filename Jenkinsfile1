@@ -42,12 +42,12 @@ pipeline {
             parallel {
                 stage('Run GoRest API Workflow Tests') {
                     steps {
-                        bat 'docker run --rm -v "%CD%\\newman:/app/newman" chakri38/gorestapiworkflow:1.0'
+                        bat 'docker run --rm -v %CD%\\newman:/app/results chakri38/gorestapiworkflow:1.0'
                     }
                 }
                 stage('Run GoRest API DataDriven Tests') {
                     steps {
-                        bat 'docker run --rm -v "%CD%\\newman:/app/results" chakri38/gorestapidd:1.0'
+                        bat 'docker run --rm -v %CD%\\newman:/app/results chakri38/gorestapidd:1.0'
                     }
                 }
             }
